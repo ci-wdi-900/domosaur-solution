@@ -10,33 +10,31 @@ const ankylosaur = document.querySelector('#biggify');
 
 messWithMeWord.style.fontSize = '3em';
 messWithMeParagraph.style.backgroundColor = 'lightgreen';
-triceratops.style.width = '324px';
 tRex.style.display = 'none';
+triceratops.style.width = '324px';
 
+messWithMeWord.addEventListener('click', makeOrange);
 triceratops.addEventListener('click', giveRedBorder);
 feathered.addEventListener('click', makeTransparent);
-plushTRex.addEventListener('click', addPadding);
 toggle.addEventListener('click', toggleRowBackground);
 ankylosaur.addEventListener('mouseenter', toggleSize);
 ankylosaur.addEventListener('mouseleave', toggleSize);
 
-
-function giveRedBorder(event) {
-  event.target.style.border = '3px solid red';
+const makeOrange = function() {
+  messWithMeWord.style.color = 'orange';
 }
 
-function makeTransparent(event) {
-  event.target.style.opacity = 0.5;
+const giveRedBorder = function() {
+  triceratops.style.border = '3px solid red';
 }
 
-function addPadding(event) {
-  event.target.style.paddingRight = '100px';
+const makeTransparent = function() {
+  feathered.style.opacity = 0.5;
 }
 
+let rowBackgroundIsWhite = true;
 
-// let rowBackgroundIsWhite = true;
-
-function toggleRowBackground() {
+const toggleRowBackground = function() {
   if (row.style.backgroundColor === 'black') {
     row.style.backgroundColor = 'white';
   } else {
@@ -57,10 +55,10 @@ function toggleRowBackground() {
   // rowBackgroundIsWhite = !rowBackgroundIsWhite
 }
 
-function toggleSize(event) {
-  if (event.target.style.width === '200px') {
-    event.target.style.width = '162px';
+const toggleSize = function() {
+  if (ankylosaur.style.width === '200px') {
+    ankylosaur.style.width = '162px';
   } else {
-    event.target.style.width = '200px';
+    ankylosaur.style.width = '200px';
   }
 }
